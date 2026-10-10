@@ -1,75 +1,35 @@
-# 1. Integers & Floats (Numbers)
-age = 21
-temperature = 36.6
+"""01_fundamentals.py - Variables, types, and basic operations."""
 
-# 2. Strings (Text)
-student_name = "Alex"
-greeting = f"Hello, {student_name}!"  # f-string: string interpolation
+# Numbers
+age = 20
+height = 1.75
+print("Age:", age, "| Height:", height)
 
-# 3. Booleans (True / False)
-is_active = True
-has_passed = False
+# Strings
+name = "Ada"
+greeting = "Hello, " + name + "!"
+print(greeting)
+print(f"{name} is {age} years old.")
 
-# 4. NoneType (Represents absence of value)
-current_session = None
+# Booleans
+is_student = True
+has_passed = age >= 18
+print("Student?", is_student, "| Adult?", has_passed)
 
-print(f"{greeting} Age: {age}, Active: {is_active}")
+# Type checking
+print("Type of age:", type(age))
+print("Type of name:", type(name))
 
-# --- Control Flow ---
-score = 85
+# Simple math
+a, b = 10, 3
+print(f"{a} + {b} = {a + b}")
+print(f"{a} - {b} = {a - b}")
+print(f"{a} * {b} = {a * b}")
+print(f"{a} / {b} = {a / b}")
+print(f"{a} // {b} = {a // b}")  # floor division
+print(f"{a} % {b} = {a % b}")   # remainder
+print(f"{a} ** {b} = {a ** b}")  # power
 
-if score >= 90:
-    grade = "A"
-elif score >= 80:
-    grade = "B"
-elif score >= 70:
-    grade = "C"
-else:
-    grade = "F"
-
-print(f"Score: {score} | Grade: {grade}")
-
-# --- Loops ---
-print("\n--- Range Loop ---")
-for i in range(5):
-    print(f"Iteration {i}")
-
-print("\n--- Collection Loop ---")
-languages = ["Python", "C++", "Rust", "Go"]
-for lang in languages:
-    print(f"Learning {lang}")
-
-print("\n--- While Loop ---")
-counter = 0
-while counter < 3:
-    print(f"Counter status: {counter}")
-    counter += 1
-
-
-# --- Functions ---
-def calculate_grade_stats(scores: list) -> dict:
-    """Calculates summary stats for a list of numerical scores."""
-    if not scores:
-        return {"average": 0.0, "max": 0, "min": 0, "count": 0}
-
-    total = sum(scores)
-    count = len(scores)
-    avg = total / count
-
-    return {
-        "average": round(avg, 2),
-        "max": max(scores),
-        "min": min(scores),
-        "count": count,
-    }
-
-
-# Function execution
-class_scores = [88, 92, 79, 95, 61, 84]
-stats = calculate_grade_stats(class_scores)
-
-print("\n--- Grade Statistics ---")
-print(f"Average Score: {stats['average']}")
-print(f"Highest Score: {stats['max']}")
-print(f"Lowest Score:  {stats['min']}")
-print(f"Total Students: {stats['count']}")
+# Input (commented so the file runs without waiting)
+# user_name = input("What is your name? ")
+# print("Nice to meet you,", user_name)
